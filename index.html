@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0, viewport-fit=cover"
+    >
+
+    <title>Jojo's Birthday</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <main id="app">
+
+        <img
+            class="sleep-bg"
+            src="./images/opening/sleep.png"
+            alt=""
+        >
+
+        <button class="wake-button">起床</button>
+        <button class="phone-button">拿起手机</button>
+
+        <svg
+            class="eye-mask"
+            viewBox="0 0 100 100"
+            preserveAspectRatio="none"
+        >
+            <defs>
+                <mask id="eye-hole">
+
+                    <rect
+                        width="100"
+                        height="100"
+                        fill="white">
+                    </rect>
+
+                    <ellipse
+                        class="eye-opening"
+                        cx="50"
+                        cy="50"
+                        rx="48"
+                        ry="0"
+                        fill="black">
+                    </ellipse>
+
+                </mask>
+            </defs>
+
+            <rect
+                width="100"
+                height="100"
+                fill="black"
+                mask="url(#eye-hole)">
+            </rect>
+        </svg>
+
+
+        <div class="phone-scene">
+            <img
+                class="phone-image"
+                src="./images/phone/phone.png"
+                alt=""
+            >
+            <button class="unlock-button">点击解锁</button>
+            <div class="unlock-hint">点击屏幕</div>
+
+            <div class="phone-desktop">
+            <div class="desktop-title">JOJO PHONE</div>
+            <div class="app-grid">
+    <div class="app-item" id="sausage-app">
+    <img src="./images/apps/腊肠狗.jpg" alt="">
+    </div>
+
+    <div class="app-item locked" id="quiz-app">
+    <img src="./images/apps/满分考卷.jpg" alt="">
+</div>
+
+    <div class="app-item locked" id="photo-app">
+    <img src="./images/apps/人生四格.jpg" alt="">
+</div>
+
+    <div class="app-item locked" id="gift-app">
+    <img src="./images/apps/生日礼物.jpg" alt="">
+</div>
+</div>
+</div>
+
+<div class="game-start-screen" id="game-start-screen">
+    <div class="game-start-box">
+        <div class="game-title">帮腊肠挑选礼物吧！</div>
+
+        <div class="game-rules">
+            <p>接住适合送给 Jojo 的礼物</p >
+            <p>接对一个 +1 分</p >
+            <p>接错不得分</p >
+            <p class="important-rule">获得 10 分即可通关</p >
+            <p>解锁下一个游戏</p >
+        </div>
+
+        <button class="game-start-button">GAME START</button>
+    </div>
+    </div>
+
+    <div class="catch-game" id="catch-game">
+
+    <div class="game-score" id="game-score">
+        SCORE 0 / 10
+    </div>
+
+    <div class="catch-area">
+        <div class="sausage-player">🐕</div>
+    </div>
+
+</div>
+</div>
+
+<div class="game-clear-screen" id="game-clear-screen">
+    <div class="game-clear-box">
+        <div class="clear-title">GAME CLEAR!</div>
+        <div class="clear-star">★</div>
+        <div class="clear-text">礼物挑选完成！</div>
+        <button class="next-button">NEXT →</button>
+    </div>
+</div>
+
+<div class="quiz-start-screen" id="quiz-start-screen">
+    <div class="quiz-start-box">
+
+        <div class="quiz-title">默契大挑战</div>
+
+        <div class="quiz-rules">
+            <p>看看你到底有多了解腊肠！</p >
+            <p>一共会有几道小问题</p >
+            <p>选出你认为正确的答案吧</p >
+        </div>
+
+        <button class="quiz-start-button">START →</button>
+
+    </div>
+</div>
+<div class="quiz-game" id="quiz-game">
+
+    <div class="quiz-question-box">
+
+        <div class="question-number">QUESTION 01</div>
+
+        <div class="question-text">
+            腊肠最喜欢的人是？
+        </div>
+
+        <button class="answer-button correct-answer">
+            A. JOJO
+        </button>
+
+        <button class="answer-button wrong-answer">
+            B. 某金姓男子
+        </button>
+
+        <button class="quiz-next-button">
+    NEXT →
+</button>
+
+    </div>
+
+</div>
+<div class="quiz-game question-two" id="question-two">
+
+    <div class="quiz-question-box">
+
+        <div class="question-number">QUESTION 02</div>
+
+        <div class="question-text">
+            腊肠最想和谁见面？
+        </div>
+
+        <button class="answer-button correct-answer-two">
+            A. JOJO
+        </button>
+
+        <button class="answer-button wrong-answer-two">
+            B. 上帝
+        </button>
+
+        <button class="quiz-next-button next-two">
+            NEXT →
+        </button>
+
+    </div>
+
+</div>
+<div class="quiz-game question-three" id="question-three">
+
+    <div class="quiz-question-box">
+
+        <div class="question-number">QUESTION 03</div>
+
+        <div class="question-text">
+            喜欢腊肠的礼物吗？
+        </div>
+
+        <button class="answer-button correct-answer-three">
+            A. 超喜欢 :)
+        </button>
+
+        <button class="answer-button wrong-answer-three">
+            B. So So :(
+        </button>
+
+        <button class="quiz-next-button next-three">
+            NEXT →
+        </button>
+
+    </div>
+
+</div>
+<div class="quiz-result-screen" id="quiz-result-screen">
+
+    <div class="quiz-result-box">
+
+        <div class="result-title">CHALLENGE CLEAR!</div>
+
+        <div class="result-score">3 / 3</div>
+
+        <div class="result-text">
+            <p>经检测：</p >
+            <p>JOJO 非常了解腊肠 ♡</p >
+            <p>并且非常喜欢腊肠准备的礼物</p >
+        </div>
+
+        <div class="result-note">
+            本测试结果具有绝对权威性，不接受申诉 :)
+        </div>
+
+        <button class="quiz-finish-button">
+            FINISH →
+        </button>
+
+    </div>
+
+</div>
+<div class="photo-start-screen" id="photo-start-screen">
+
+    <div class="photo-start-box">
+
+        <div class="photo-title">人生四格</div>
+
+        <div class="photo-camera"></div>
+
+        <div class="photo-text">
+            <p>和腊肠一起拍张照片吧！</p >
+            <p>需要开启相机权限</p >
+        </div>
+
+        <button class="photo-start-button">
+            开启相机 →
+        </button>
+
+    </div>
+
+</div>
+<div class="photo-camera-screen" id="photo-camera-screen">
+
+    <div class="photo-camera-box">
+
+        <img
+            class="photobooth-template"
+            src="./images/photobooth/template.png"
+            alt="人生四格拍摄模板"
+        >
+
+        <button class="camera-shutter-button">
+        <span class="shutter-red-circle"></span>
+        </button>
+
+    </div>
+
+</div>
+<div class="photo-printing-screen" id="photo-printing-screen">
+
+    <div class="printing-box">
+
+        <div class="printing-title">
+            正在打印照片...
+        </div>
+
+        <div class="polaroid-camera">
+
+            <div class="polaroid-lens"></div>
+
+            <div class="photo-slot">
+                <div class="printing-photo"></div>
+            </div>
+
+        </div>
+
+        <div class="printing-text">
+            请稍等 ♡
+        </div>
+
+    </div>
+
+</div>
+<div class="photo-final-screen" id="photo-final-screen">
+
+    <div class="photo-final-box">
+
+        <img
+            class="photo-final-image"
+            src="./images/photobooth/final.png"
+            alt="人生四格成片"
+        >
+
+        <button class="photo-final-next">
+            NEXT →
+        </button>
+        </div>
+
+</div>
+<div class="gift-screen" id="gift-screen">
+
+    <div class="gift-box">
+
+        <div class="gift-title">
+            FOR JOJO ♡
+        </div>
+
+        <div class="gift-icon">
+            
+        </div>
+
+        <div class="gift-message">
+            <p>最后一份生日礼物</p >
+            <p>要现在打开吗？</p >
+        </div>
+
+        <button class="gift-open-button">
+            OPEN →
+        </button>
+
+    </div>
+
+</div>
+<div class="letter-screen" id="letter-screen">
+
+    <div class="letter-paper">
+
+        <div class="letter-date">
+            10.13
+        </div>
+
+        <div class="letter-title">
+            TO JOJO ♡
+        </div>
+
+        <div class="letter-content">
+
+    <p>亲爱的 Jo</p >
+
+    <p>
+        好像很久没有这样跟你写过信了。
+    </p >
+
+    <p>
+        说实话，今年状态不太好，我也没有太多精力来关心你。
+        我必须要承认，这一点我做得不够好。
+    </p >
+
+    <p>
+        其实犹犹豫豫了半天，也不知道送些什么东西你会喜欢，
+        又或者说送什么东西比较实用。
+    </p >
+
+    <p>
+        我好像并不够了解你呢？
+        比如你最近有了什么新爱好？
+        爱看哪个作家的书？
+        有没有碰到什么觉得超级好吃的东西？
+    </p >
+
+    <p>
+        今年好像也慢慢开始接受，
+        人与人之间的联系不会永远保持同一种频率，
+        所以有时候也变得有点淡淡的。
+    </p >
+
+    <p>
+        其实前一段时间和你打的那通电话让我很开心。
+        我很多时候不知道自己为什么觉得难过，
+        所以我也不知道该怎么和别人或者医生说起。
+        但是你一点也没追问，就陪着我聊天聊地，
+        真的很谢谢你。
+    </p >
+
+    <p>
+        大概朋友就是这样吧，
+        哪怕有一段时间没有联系了，
+        再聊天时也依然会觉得很轻松。
+        （我单方面这样认为。）
+    </p >
+
+    <p>
+        谢谢你成为我的朋友。
+        应该说了很多遍了，但还是想说，
+        有 Jojo 这样的朋友真的很好 ♡
+    </p >
+
+    <p>
+        知道你最近被工作搞得一个头两个大，
+        我也没什么能够帮你的、替你分担的。
+    </p >
+
+    <p>
+        所以，做了这个小东西，
+        想着你看了之后会不会开心一点呢？
+        （好吧，也不一定哈哈哈）
+    </p >
+
+    <p>
+        我不代表你回答了，
+        你到时候要记得自己告诉我哦～
+    </p >
+
+    <p>
+        总之，祝我们广东省广州市黄埔区的陈 Jojo 女士生日快乐～
+    </p >
+
+    <p>
+        永远美丽，永远富有，永远幸福～
+        永远只有美好的词语形容人生哈哈哈哈哈 ♡
+    </p >
+
+</div>
+        <div class="letter-signature">
+            FROM 腊肠
+        </div>
+
+    </div>
+<button class="birthday-restart-button">
+    退出 · 再过一次生日 ↻
+</button>
+</div>
+
+    </main>
+
+<button class="music-toggle" id="music-toggle">
+    ♫ ON
+</button>
+<audio id="birthday-bgm" loop>
+    <source src="./music/birthday.mp3" type="audio/mpeg">
+</audio>
+    <script src="script.js"></script>
+
+</body>
+
+</html>
